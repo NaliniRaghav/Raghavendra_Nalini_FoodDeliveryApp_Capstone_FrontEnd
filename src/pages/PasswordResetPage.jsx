@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './RestaurantDisplayForm.css';
 
-const ResetPasswordPage = ({ setCurrentForm }) => {
+const ResetPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,7 +24,7 @@ const ResetPasswordPage = ({ setCurrentForm }) => {
       const response = await fetch('http://localhost:3000/api/users/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, newPassword }) // Send the email and new password
+        body: JSON.stringify({ email, newPassword })  
       });
 
       const data = await response.json();
@@ -29,7 +32,7 @@ const ResetPasswordPage = ({ setCurrentForm }) => {
       if (response.ok) {
         setSuccess('Password reset successful');
         setTimeout(() => {
-          setCurrentForm('login'); 
+          navigate('/'); 
         }, 2000);
       } else {
         setError(data.message || 'Failed to reset password');
@@ -40,7 +43,7 @@ const ResetPasswordPage = ({ setCurrentForm }) => {
   };
 
   return (
-    <div className="reset-password-container">
+    <div className="container">
       <h1>Reset Password</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -71,7 +74,7 @@ const ResetPasswordPage = ({ setCurrentForm }) => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {success && <p style={{ color: 'green' }}>{success}</p>}
       </form>
-      <button type="button" onClick={() => setCurrentForm('login')}>Back to Login</button>
+      <button type="button" onClick={() => navigate('/')}>Back to Login</button>
     </div>
   );
 };
