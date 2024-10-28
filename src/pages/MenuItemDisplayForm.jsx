@@ -150,7 +150,8 @@ const MenuItemDisplay = () => {
     setFinalAmount(calculateTotalAmount());
     setShowOrderConfirmation(true);
   };
-
+  //
+  
   const confirmOrder = () => {
     const { cardNumber, expiryDate, cvv } = orderDetails.payment;
     if (!cardNumber || !expiryDate || !cvv) {

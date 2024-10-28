@@ -1,9 +1,10 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignupPage = ({ setCurrentForm }) => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',     
     email: '',
     password: '',
     phone: ''
@@ -33,6 +34,7 @@ const SignupPage = ({ setCurrentForm }) => {
         setError(data.message || 'Signup failed. Please try again.');
       }
     } catch (error) {
+      console.error('Signup error:', error);
       setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);
@@ -50,10 +52,10 @@ const SignupPage = ({ setCurrentForm }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+          name="name"
+          placeholder="Name"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
         />
         <input
@@ -93,4 +95,3 @@ const SignupPage = ({ setCurrentForm }) => {
 };
 
 export default SignupPage;
-;
