@@ -1,43 +1,121 @@
+ 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #80add7;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.login-container {
+ 
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300%;
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
 }
 
-form div {
-  margin-bottom: 10px;
+ 
+h1 {
+  text-align: center;
+  color: #e62e2e;
+  margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input {
+ 
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
-  padding: 8px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
+  background-color: #f9f9f9;
+  font-size: 16px;
 }
 
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border-color: #6c63ff;
+  outline: none;
+  background-color: #fff;
+}
+
+ 
 button {
   width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
+  
+  background-color: #d33a14;
+  color: rgb(7, 5, 5);
+  padding: 12px;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+ 
+p {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+ 
+button[type="button"] {
+  background-color: transparent;
+  color: #6c63ff;
+  text-decoration: underline;
+  padding: 0;
+  border: none;
+  margin-top: 15px;
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #ccc;
+button[type="button"]:hover {
+  color: #333;
+}
+ 
+.reset-password-container button {
+  background-color: #ff6363;
+}
+
+.reset-password-container button:hover {
+  background-color: #e14e4e;
+}
+
+ 
+.login-container,
+.signup-container,
+.reset-password-container {
+  margin-top: 20px;
+}
+
+ 
+ 
+button {
+  width: 100%;
+  background-color: #d3b8ff;  
+  color: black;  
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+ 
+.reset-password-container button {
+  background-color: #d3b8ff;  
+  color: black;  
 }
