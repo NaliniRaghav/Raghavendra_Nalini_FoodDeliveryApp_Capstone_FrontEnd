@@ -191,7 +191,7 @@ const MenuItemDisplay = () => {
       <header className="top-menu-bar">
         <div className="logo">
           <img
-            src="/src/assets/images/logo.jpg"
+            src="/assets/images/logo.jpg"
             alt="App Logo"
             className="app-logo"
           />
