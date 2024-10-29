@@ -218,6 +218,7 @@ const MenuItemDisplay = () => {
       </header>
 
       <div className="quote-section">
+        <h3>Food for thought</h3>
         <blockquote className="quote-text">"{quote.text}"</blockquote>
         <p className="quote-author">- {quote.author}</p>
       </div>

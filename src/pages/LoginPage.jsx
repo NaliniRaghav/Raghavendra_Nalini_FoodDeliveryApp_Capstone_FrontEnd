@@ -41,6 +41,8 @@ function LoginPage({ setCurrentForm }) {
   return (
     <div className="login-page">
       <form onSubmit={handleLogin}>
+        <h2>Food on the Fly</h2>
+        <h3>(Online food delivery app)</h3>
         <h2>Login</h2>
         <label>
           Name:

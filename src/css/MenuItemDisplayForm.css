@@ -244,26 +244,26 @@ body {
 }
 
 .checkout-button {
-  background-color: #4d7faa;
+  background-color: #c6d6f0;
   color: #333;
 }
 
 .checkout-button:hover {
-  background-color: #60848e;
+  background-color: #c6d6f0;
 }
 
 .confirm-order-button {
-  background-color: #60848e;
+  background-color: #c6d6f0;
   color: #333;
 }
 
 .confirm-order-button:hover {
-  background-color: #60848e;
+  background-color: #c6d6f0;
 }
 
 .refresh-button,
 .back-button {
-  background-color: #60848e;
+  background-color: #c6d6f0;
   color: #333;
 }
 
@@ -1094,7 +1094,7 @@ body {
 .cart-sidebar {
   flex: 1;
   padding: 20px;
-  background-color: #84909c;
+  background-color: #fdf3dd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

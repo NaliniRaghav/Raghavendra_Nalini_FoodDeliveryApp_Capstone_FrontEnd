@@ -74,7 +74,6 @@
 
 .restaurant-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
 }
@@ -149,7 +148,6 @@
 
 .restaurant-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   width: 100%;
   max-width: 800px;
@@ -327,7 +325,7 @@ body {
 /* Restaurant Grid */
 .restaurant-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -415,8 +413,6 @@ body {
 }
 .restaurant-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
-  grid-template-rows: repeat(5, auto); /* 5 rows, auto height */
   gap: 20px; /* Space between grid items */
   padding: 20px;
 }
