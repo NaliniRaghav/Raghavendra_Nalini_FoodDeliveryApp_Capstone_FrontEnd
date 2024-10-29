@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./MenuItemDisplayForm.css";
+import "../css/MenuItemDisplayForm.css";
 
 const MenuItemDisplay = () => {
   const { restaurantId } = useParams();
@@ -151,7 +150,7 @@ const MenuItemDisplay = () => {
     setShowOrderConfirmation(true);
   };
   //
-  
+
   const confirmOrder = () => {
     const { cardNumber, expiryDate, cvv } = orderDetails.payment;
     if (!cardNumber || !expiryDate || !cvv) {

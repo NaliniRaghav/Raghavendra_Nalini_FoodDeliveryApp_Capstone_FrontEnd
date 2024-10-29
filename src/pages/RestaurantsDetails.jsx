@@ -1,10 +1,10 @@
-// src/components/RestaurantDetails.js
-import React from 'react';
-
 const RestaurantDetails = ({ restaurant }) => (
   <div className="restaurant-details">
     <img
-      src={restaurant.image || "https://via.placeholder.com/150?text=No+Image+Available"}
+      src={
+        restaurant.image ||
+        "https://via.placeholder.com/150?text=No+Image+Available"
+      }
       alt={restaurant.name || "Restaurant Image"}
       className="restaurant-logo"
     />

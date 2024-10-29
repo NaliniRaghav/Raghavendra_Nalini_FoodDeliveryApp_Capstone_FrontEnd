@@ -1,6 +1,5 @@
- 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #80add7;
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body {
   min-height: 100vh;
 }
 
- 
 .container {
   background-color: #ffffff;
   border-radius: 10px;
@@ -20,14 +18,12 @@ body {
   max-width: 400px;
 }
 
- 
 h1 {
   text-align: center;
-  color: #e62e2e;
+  color: #797a9e;
   margin-bottom: 20px;
 }
 
- 
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -50,10 +46,9 @@ input[type="email"]:focus {
   background-color: #fff;
 }
 
- 
 button {
   width: 100%;
-  
+
   background-color: #d33a14;
   color: rgb(7, 5, 5);
   padding: 12px;
@@ -64,14 +59,13 @@ button {
   transition: background-color 0.3s;
 }
 
- 
 p {
   color: red;
   font-size: 14px;
   margin-top: 10px;
   text-align: center;
 }
- 
+
 button[type="button"] {
   background-color: transparent;
   color: #6c63ff;
@@ -85,7 +79,7 @@ button[type="button"] {
 button[type="button"]:hover {
   color: #333;
 }
- 
+
 .reset-password-container button {
   background-color: #ff6363;
 }
@@ -94,19 +88,16 @@ button[type="button"]:hover {
   background-color: #e14e4e;
 }
 
- 
 .login-container,
 .signup-container,
 .reset-password-container {
   margin-top: 20px;
 }
 
- 
- 
 button {
   width: 100%;
-  background-color: #d3b8ff;  
-  color: black;  
+  background-color: #d3b8ff;
+  color: black;
   padding: 12px;
   border: none;
   border-radius: 5px;
@@ -114,8 +105,7 @@ button {
   font-size: 16px;
 }
 
- 
 .reset-password-container button {
-  background-color: #d3b8ff;  
-  color: black;  
+  background-color: #d3b8ff;
+  color: black;
 }

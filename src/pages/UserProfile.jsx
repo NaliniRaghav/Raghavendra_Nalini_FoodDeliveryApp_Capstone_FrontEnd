@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
   const [editableProfile, setEditableProfile] = useState(userProfile);
 
   useEffect(() => {
-    setEditableProfile(userProfile);  
+    setEditableProfile(userProfile);
   }, [userProfile]);
 
   const handleChange = (e) => {

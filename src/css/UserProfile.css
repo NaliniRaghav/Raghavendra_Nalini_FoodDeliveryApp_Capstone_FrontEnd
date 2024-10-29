@@ -1,0 +1,53 @@
+.user-profile {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.user-profile h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-profile label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.user-profile input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}

@@ -74,7 +74,7 @@ body {
 /* Top Menu Buttons Styling */
 .top-menu-buttons {
   display: flex;
-  gap: 10px;  
+  gap: 10px;
 }
 
 .top-menu-buttons button {
@@ -244,29 +244,28 @@ body {
 }
 
 .checkout-button {
-  background-color: #90ee90;
+  background-color: #4d7faa;
   color: #333;
 }
 
 .checkout-button:hover {
-  background-color: #98fb98;
+  background-color: #60848e;
 }
 
 .confirm-order-button {
-  background-color: #ffb6c1;
+  background-color: #60848e;
   color: #333;
 }
 
 .confirm-order-button:hover {
-  background-color: #ffd1dc;
+  background-color: #60848e;
 }
 
 .refresh-button,
 .back-button {
-  background-color: #ffd1dc;
+  background-color: #60848e;
   color: #333;
 }
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -282,9 +281,9 @@ body {
 /* Container to hold menu items in a horizontal row */
 .menu-items {
   display: flex;
-  flex-wrap: wrap;  
-  gap: 20px;  
-  justify-content: flex-start;  
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
   margin-top: 20px;
   padding: 10px;
 }
@@ -294,7 +293,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;  
+  width: 200px;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
@@ -364,11 +363,13 @@ body {
   align-items: center;
   width: 100%;
   padding: 15px 20px;
-  background-color: #333;  
+  background-color: #333;
   color: #fff;
 }
 
-.logo, .delivery-info, .top-menu-buttons {
+.logo,
+.delivery-info,
+.top-menu-buttons {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -398,8 +399,8 @@ body {
 .menu-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  
-  gap: 15px;  
+  justify-content: center;
+  gap: 15px;
   padding: 20px;
   width: 100%;
   /* max-width: 1200px;  */
@@ -436,7 +437,8 @@ body {
   font-weight: bold;
 }
 
-.item-description, .item-price {
+.item-description,
+.item-price {
   font-size: 0.9em;
   color: #555;
   margin: 5px 0;
@@ -949,7 +951,7 @@ body {
 }
 
 .cart-button {
-  background-color: #ff69b4;  
+  background-color: #4584b1;
 }
 /* Reset */
 * {
@@ -990,7 +992,10 @@ body {
   border-radius: 8px;
 }
 
-.logo, .delivery-info, .search-bar, .top-menu-buttons {
+.logo,
+.delivery-info,
+.search-bar,
+.top-menu-buttons {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -1015,12 +1020,12 @@ body {
 .cart-button {
   background-color: #615d76;
 }
- 
+
 .quote-section {
   text-align: center;
   font-style: italic;
   color: #1d1616;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0b4;
   padding: 10px;
   margin: 0;
   border-radius: 5px;
@@ -1072,12 +1077,12 @@ body {
 
 .menu-item-details .item-price {
   font-size: 1.1rem;
-  color: #C9E9D2;
+  color: #c9e9d2;
   font-weight: bold;
 }
 
 .menu-item-details button {
-  background-color: #789DBC;
+  background-color: #789dbc;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -1089,7 +1094,7 @@ body {
 .cart-sidebar {
   flex: 1;
   padding: 20px;
-  background-color: #c3eda7;
+  background-color: #84909c;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1128,65 +1133,62 @@ body {
   }
 }
 
-
 /* Quote Section */
 .quote-section {
-  text-align: center;  
-  font-style: italic;  
-  color: #140a0a;  
-  background-color: #f0f0f0;  
-  padding: 15px;  
-  border-radius: 5px;  
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  
-  margin-bottom: 20px;  
+  text-align: center;
+  font-style: italic;
+  color: #140a0a;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 /* Restaurant Details */
 .restaurant-details {
-  text-align: center;  
-  padding: 15px; 
-  background-color: #ebaa60;  
-  color: #333;  
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  
-  border-radius: 8px;  
-  margin-bottom: 20px;  
-  font-size: 1rem;  
+  text-align: center;
+  padding: 15px;
+  background-color: #d2aaaa;
+  color: #333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 .restaurant-details h2 {
-  font-size: 1.5rem;  
-  margin-bottom: 8px; 
-  color: #0073e6; 
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #0073e6;
 }
 
 .restaurant-details p {
-  font-size: 0.9rem; 
-  color: #666; 
-  
+  font-size: 0.9rem;
+  color: #666;
 }
 
 /* Control the size of the restaurant logo */
 .restaurant-logo {
-  width: 150px;  
-  height: auto;  
-  max-height: 150px;  
-  object-fit: cover;  
-}
- 
-.menu-item-image {
-  width: 100px;  
-  height: 100px;  
-  object-fit: cover;  
-  border-radius: 8px;  
+  width: 150px;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
 }
 
- 
+.menu-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .top-menu-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #789DBC;
+  background-color: #789dbc;
   color: black;
 }
 
