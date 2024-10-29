@@ -41,9 +41,13 @@ function LoginPage({ setCurrentForm }) {
   return (
     <div className="login-page">
       <form onSubmit={handleLogin}>
-        <h2>Food on the Fly</h2>
+      <img src={"/assets/images/logo.jpg"} alt="Food on the Fly Logo" className="logo" /> 
+        {/* <h2>Food on the Fly</h2>
         <h3>(Online food delivery app)</h3>
-        <h2>Login</h2>
+        <h2>Login</h2> */}
+        <h2 style={{ color: '#ff6600', fontSize: '28px', marginBottom: '5px' }}>Food on the Fly</h2>
+        <h3 style={{ color: '#333', fontSize: '16px', fontWeight: 'normal', marginTop: '0' }}>
+          (Online food delivery app) </h3>
         <label>
           Name:
           <input

@@ -76,3 +76,9 @@ button:disabled {
   text-decoration: none;
   color: #0056b3;
 }
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+}
