@@ -3,25 +3,39 @@ import { useNavigate } from "react-router-dom";
 import "../css/RestaurantDisplayForm.css";
 import UserProfile from "./UserProfile";
 
+// Component to display the restaurant list and filter options
 const RestaurantDisplayForm = ({ setCurrentForm }) => {
+  // To store the list of restaurants
   const [restaurants, setRestaurants] = useState([]);
+  // To store available zip codes for filtering
   const [zipCodes, setZipCodes] = useState([]);
+  // To store available cuisine types for filtering
   const [cuisineTypes, setCuisineTypes] = useState([]);
+  // To track loading state while data is fetched
   const [loading, setLoading] = useState(true);
+  // To store error messages
   const [error, setError] = useState("");
+  // To toggle user profile view
   const [showProfile, setShowProfile] = useState(false);
+  // To store user profile information
   const [userProfile, setUserProfile] = useState({
     email: "",
     phone: "",
     address: { street: "", city: "", state: "", zipCode: "", country: "USA" },
   });
+  // To store selected cuisine type for filtering
   const [cuisine, setCuisine] = useState("All");
+  // To store selected zip code for filtering
   const [zipcode, setZipcode] = useState("");
+  // To store selected sort option
   const [sort, setSort] = useState("");
+  // To track pagination page number
   const [page, setPage] = useState(1);
 
+  // To navigate to other pages
   const navigate = useNavigate();
 
+  // To fetch restaurants data based on filters and pagination
   useEffect(() => {
     if (showProfile) return;
 
@@ -61,6 +75,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
     fetchRestaurants();
   }, [cuisine, zipcode, sort, page, showProfile]);
 
+  // To fetch unique cuisine types for filtering options
   useEffect(() => {
     const fetchCuisineTypes = async () => {
       try {
@@ -81,6 +96,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
     fetchCuisineTypes();
   }, []);
 
+  // To fetch user profile information
   const fetchUserProfile = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/users/me`, {
@@ -99,6 +115,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
     }
   };
 
+  // To handle profile update and save changes
   const handleSaveProfile = async (updatedProfile) => {
     try {
       const response = await fetch("http://localhost:3000/api/users/me", {
@@ -119,11 +136,13 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
     }
   };
 
+  // To handle profile button click and display profile
   const handleProfileClick = () => {
     fetchUserProfile();
     setShowProfile(true);
   };
 
+  // To reset all filter options to default
   const handleResetFilters = () => {
     setCuisine("All");
     setSort("");
@@ -131,23 +150,36 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
     setPage(1);
   };
 
+  // To navigate to the menu page of a selected restaurant
   const handleCardClick = (restaurantId) => {
     navigate(`/menu/${restaurantId}`);
   };
 
+  // To handle Exit button to navigate back to login page
+  const handleExit = () => {
+    setCurrentForm("login");
+    navigate("/login");
+  };
+
+  // To go to the next page of pagination
   const handleNextPage = () => setPage(page + 1);
+  // To go to the previous page of pagination
   const handlePreviousPage = () => setPage(page > 1 ? page - 1 : 1);
 
+  // To display loading message
   if (loading && !showProfile) return <p>Loading...</p>;
+  // To display error message if any
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="restaurant-display-form">
+      {/* Header section with title and filter controls */}
       <header>
         <h1>Food on the Fly</h1>
         <div className="header-controls">
           {showProfile ? (
-            <button onClick={() => setCurrentForm("login")}>Logout</button>
+            <>
+            </>
           ) : (
             <>
               <label>
@@ -193,6 +225,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
         </div>
       </header>
 
+      {/* User profile section or restaurant grid display */}
       {showProfile ? (
         <UserProfile
           userProfile={userProfile}
@@ -240,6 +273,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
             )}
           </div>
 
+          {/* Pagination controls for navigating pages */}
           <div className="pagination-controls">
             <button onClick={handlePreviousPage} disabled={page === 1}>
               Previous
@@ -251,6 +285,7 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
         </>
       )}
 
+      {/* Footer section */}
       <footer className="footer">
         <div className="footer-content">
           <h2>Swiggy</h2>
@@ -261,4 +296,5 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
   );
 };
 
+// To export the RestaurantDisplayForm component
 export default RestaurantDisplayForm;

@@ -404,16 +404,16 @@ body {
 
 .pagination-controls button {
   margin: 0 10px;
-  padding: 8px 16px; /* Provides comfortable padding for buttons */
+  padding: 8px 16px; 
 }
 
 .footer p {
   margin: 5px 0;
-  font-size: 16px; /* Standard font size for readability */
+  font-size: 16px; 
 }
 .restaurant-grid {
   display: grid;
-  gap: 20px; /* Space between grid items */
+  gap: 20px; 
   padding: 20px;
 }
 
@@ -427,7 +427,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* RestaurantDisplayForm.css */
 
 .header-controls {
   display: flex;
@@ -439,8 +438,8 @@ body {
 
 .header-controls > label,
 .header-controls > button {
-  flex: 1; /* Make each item take up equal space */
-  text-align: center; /* Center-align text within each filter */
+  flex: 1; 
+  text-align: center; 
 }
 
 .restaurant-card {

@@ -1,4 +1,4 @@
-Menibarcar/
+ 
 
 /* Reset */
 * {
@@ -266,8 +266,7 @@ body {
   background-color: #c6d6f0;
   color: #333;
 }
-
-/* Responsive Adjustments */
+ 
 @media (max-width: 768px) {
   .content-container {
     flex-direction: column;
@@ -1122,7 +1121,7 @@ body {
   text-align: right;
 }
 
-/* Responsive Adjustments */
+ 
 @media (max-width: 768px) {
   .content-container {
     flex-direction: column;

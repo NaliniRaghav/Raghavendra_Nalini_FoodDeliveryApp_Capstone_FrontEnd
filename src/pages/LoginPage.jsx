@@ -103,7 +103,7 @@ function LoginPage({ setCurrentForm }) {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)} // Handle name input change
+            onChange={(e) => setName(e.target.value)} 
             style={{ display: "block", marginTop: "3px" }} // Input styling for spacing
           />
         </label>

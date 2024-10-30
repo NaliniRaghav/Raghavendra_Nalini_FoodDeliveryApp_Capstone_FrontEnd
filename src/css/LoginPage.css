@@ -79,6 +79,6 @@ button:disabled {
 .logo {
   display: block;
   margin: 0 auto;
-  width: 100px; /* Adjust size as needed */
+  width: 100px;  
   height: auto;
 }

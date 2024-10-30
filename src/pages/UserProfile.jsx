@@ -1,12 +1,21 @@
-import { useState, useEffect } from "react";
 
+// To import necessary hooks for component functionality
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/UserProfile.css";
+
+
+// Component to display and edit user profile form
 const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
   const [editableProfile, setEditableProfile] = useState(userProfile);
+  const navigate = useNavigate();
 
+  // To update the editable profile when userProfile prop changes
   useEffect(() => {
     setEditableProfile(userProfile);
   }, [userProfile]);
 
+  // To handle input changes for profile fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name.includes("address.")) {
@@ -23,10 +32,14 @@ const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
     }
   };
 
+  // To save the updated profile
   const handleSave = () => onSaveProfile(editableProfile);
 
+  // To navigate back to login page
+  const handleExit = () => navigate("/login");
+
   return (
-    <div className="user-profile">
+    <div className="user-profile"> {/* Container for user profile form */}
       <h2>User Profile</h2>
       <form>
         <label>
@@ -93,15 +106,21 @@ const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
             disabled
           />
         </label>
-        <button type="button" onClick={handleSave}>
-          Save
-        </button>
-        <button type="button" onClick={onClose}>
-          Cancel
-        </button>
+        <div className="profile-actions">
+          <button type="button" onClick={handleSave}>
+            Save
+          </button>
+          <button type="button" onClick={onClose}>
+            Cancel
+          </button>
+          <button type="button" onClick={handleExit}>
+            Exit
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
+// To export the UserProfile component
 export default UserProfile;

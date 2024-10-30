@@ -1,26 +1,55 @@
+// // Importing necessary React hooks and components for routing
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+// Importing CSS for styling
 import "../css/MenuItemDisplayForm.css";
 
+// To display restaurant menu and cart functionality
 const MenuItemDisplay = () => {
+  
+  // To get restaurantId from URL parameters
   const { restaurantId } = useParams();
+  
+  // To navigate between pages
   const navigate = useNavigate();
+  
+  // To set restaurant details state
   const [restaurantDetails, setRestaurantDetails] = useState(null);
+  
+  // To set menu items state
   const [menuItems, setMenuItems] = useState([]);
+  
+  // To set cart items state
   const [cart, setCart] = useState({});
+  
+  // To set order details for checkout
   const [orderDetails, setOrderDetails] = useState({
     deliveryOption: "pickup",
     deliveryTime: "ASAP",
     address: "sample",
     payment: { cardNumber: "", expiryDate: "", cvv: "" },
   });
+  
+  // To toggle order confirmation view
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
+  
+  // To set loading state during data fetching
   const [loading, setLoading] = useState(true);
+  
+  // To set error messages
   const [error, setError] = useState("");
+  
+  // To set the final amount for order
   const [finalAmount, setFinalAmount] = useState(0);
+  
+  // To set random quote for display
   const [quote, setQuote] = useState({ text: "", author: "" });
+  
+  // To toggle cart visibility
   const [isCartVisible, setIsCartVisible] = useState(false);
 
+  // To fetch all data when restaurantId changes
   useEffect(() => {
     fetchRestaurantDetails();
     fetchMenuItems();
@@ -28,6 +57,7 @@ const MenuItemDisplay = () => {
     fetchUserProfile();
   }, [restaurantId]);
 
+  // To fetch user profile and update address
   const fetchUserProfile = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/users/me`, {
@@ -51,6 +81,7 @@ const MenuItemDisplay = () => {
     }
   };
 
+  // To fetch restaurant details
   const fetchRestaurantDetails = async () => {
     try {
       const response = await fetch(
@@ -66,6 +97,7 @@ const MenuItemDisplay = () => {
     }
   };
 
+  // To fetch menu items for the restaurant
   const fetchMenuItems = async () => {
     try {
       const response = await fetch(
@@ -81,6 +113,7 @@ const MenuItemDisplay = () => {
     }
   };
 
+  // To fetch a random quote for display
   const fetchRandomQuote = async () => {
     try {
       const response = await fetch(
@@ -104,6 +137,7 @@ const MenuItemDisplay = () => {
     }
   };
 
+  // To add menu item to cart
   const addToCart = (itemId, item) => {
     setCart((prevCart) => ({
       ...prevCart,
@@ -114,6 +148,7 @@ const MenuItemDisplay = () => {
     }));
   };
 
+  // To update quantity of items in the cart
   const updateCartQuantity = (itemId, delta) => {
     setCart((prevCart) => {
       const quantity = (prevCart[itemId]?.quantity || 0) + delta;
@@ -131,16 +166,19 @@ const MenuItemDisplay = () => {
     });
   };
 
+  // To calculate total amount in the cart
   const calculateTotalAmount = () => {
     return Object.values(cart)
       .reduce((total, item) => total + item.price * item.quantity, 0)
       .toFixed(2);
   };
 
+  // To toggle visibility of the cart
   const toggleCartVisibility = () => {
     setIsCartVisible(!isCartVisible);
   };
 
+  // To handle order placement and show confirmation
   const handleOrderPlacement = () => {
     if (Object.keys(cart).length === 0) {
       alert("Your cart is empty.");
@@ -149,8 +187,8 @@ const MenuItemDisplay = () => {
     setFinalAmount(calculateTotalAmount());
     setShowOrderConfirmation(true);
   };
-  //
 
+  // To confirm the order after checking payment details
   const confirmOrder = () => {
     const { cardNumber, expiryDate, cvv } = orderDetails.payment;
     if (!cardNumber || !expiryDate || !cvv) {
@@ -167,6 +205,7 @@ const MenuItemDisplay = () => {
     setIsCartVisible(false);
   };
 
+  // To handle changes in payment input fields
   const handlePaymentChange = (e) => {
     const { name, value } = e.target;
     setOrderDetails((prevDetails) => ({
@@ -175,19 +214,28 @@ const MenuItemDisplay = () => {
     }));
   };
 
+  // To handle image error by setting a placeholder
   const handleImageError = (e) => {
     e.target.src = "https://via.placeholder.com/150?text=No+Image+Available";
   };
 
+  // To navigate back to restaurant listing
+  const handleBackToRestaurants = () => {
+    navigate("/restaurantDisplay"); 
+  };
+
+  // To navigate to login page on logout
   const handleLogout = () => {
     navigate("/login");
   };
 
+  // To show loading or error message if any
   if (loading) return <p>Loading...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="menu-item-display">
+      {/* Header section with logo and navigation buttons */}
       <header className="top-menu-bar">
         <div className="logo">
           <img
@@ -198,6 +246,7 @@ const MenuItemDisplay = () => {
           <h1 className="app-name">Food On the Fly</h1>
         </div>
 
+        {/* Delivery info section */}
         <div className="delivery-info">
           <span>Delivery to: </span>
           <span className="address-display">
@@ -205,7 +254,11 @@ const MenuItemDisplay = () => {
           </span>
         </div>
 
+        {/* Top menu buttons */}
         <div className="top-menu-buttons">
+          <button onClick={handleBackToRestaurants} className="back-button">
+            Back to Restaurants
+          </button>
           <button className="account-button" onClick={handleLogout}>
             Logout
           </button>
@@ -217,12 +270,14 @@ const MenuItemDisplay = () => {
         </div>
       </header>
 
+      {/* Quote section */}
       <div className="quote-section">
         <h3>Food for thought</h3>
         <blockquote className="quote-text">"{quote.text}"</blockquote>
         <p className="quote-author">- {quote.author}</p>
       </div>
 
+      {/* Restaurant details section */}
       {restaurantDetails && (
         <div className="restaurant-details">
           <img
@@ -241,6 +296,7 @@ const MenuItemDisplay = () => {
         </div>
       )}
 
+      {/* Cart sidebar section */}
       {isCartVisible ? (
         <div className="cart-sidebar">
           <h3>Cart Summary</h3>
@@ -259,6 +315,7 @@ const MenuItemDisplay = () => {
               <p>Estimated time: {orderDetails.deliveryTime}</p>
               <p>Total Amount: ${finalAmount}</p>
 
+              {/* Payment input fields */}
               <h4>Payment Information</h4>
               <input
                 type="text"
@@ -282,6 +339,7 @@ const MenuItemDisplay = () => {
                 onChange={handlePaymentChange}
               />
 
+              {/* Order confirmation buttons */}
               <button onClick={confirmOrder} className="confirm-order-button">
                 Confirm Order
               </button>
@@ -291,6 +349,7 @@ const MenuItemDisplay = () => {
             </>
           ) : (
             <>
+              {/* Displaying cart items */}
               <ul className="cart-items-list">
                 {Object.values(cart).map((cartItem) => (
                   <li key={cartItem._id} className="cart-item">
@@ -324,6 +383,7 @@ const MenuItemDisplay = () => {
       ) : (
         <div className="content-container">
           <div className="menu-items">
+            {/* Displaying menu items */}
             {menuItems.map((item) => (
               <div className="menu-item-card" key={item._id}>
                 <img
@@ -367,4 +427,5 @@ const MenuItemDisplay = () => {
   );
 };
 
+// Exporting the main component
 export default MenuItemDisplay;
