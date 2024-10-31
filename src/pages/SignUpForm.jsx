@@ -1,5 +1,5 @@
 // // To import necessary modules and hooks
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Component to display the signup form

@@ -1,3 +1,77 @@
+// import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import "../css/RestaurantDisplayForm.css";
+// import UserProfile from "./UserProfile";
+
+// const RestaurantDisplayForm = ({ setCurrentForm }) => {
+//   const [restaurants, setRestaurants] = useState([]);
+//   const [zipCodes, setZipCodes] = useState([]);
+//   const [cuisineTypes, setCuisineTypes] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState("");
+//   const [showProfile, setShowProfile] = useState(false);
+//   const [userProfile, setUserProfile] = useState({
+//     email: "",
+//     phone: "",
+//     address: { street: "", city: "", state: "", zipCode: "", country: "USA" },
+//   });
+//   const [cuisine, setCuisine] = useState("All");
+//   const [zipcode, setZipcode] = useState("");
+//   const [sort, setSort] = useState("");
+//   const [page, setPage] = useState(1);
+//   const navigate = useNavigate();
+
+//   // Fetch available cuisine types and zip codes
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const cuisinesResponse = await fetch("http://localhost:3000/api/restaurants/cuisines");
+//         if (!cuisinesResponse.ok) throw new Error("Failed to fetch cuisine types");
+//         const cuisinesData = await cuisinesResponse.json();
+//         setCuisineTypes(["All", ...cuisinesData.cuisines]);
+
+//         const zipCodesResponse = await fetch("http://localhost:3000/api/restaurants/zipcodes");
+//         if (!zipCodesResponse.ok) throw new Error("Failed to fetch zip codes");
+//         const zipCodesData = await zipCodesResponse.json();
+//         setZipCodes(["All", ...zipCodesData.zipcodes]);
+//       } catch (error) {
+//         console.error("Error fetching filter data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
+//   // Fetch restaurants based on filters and pagination
+//   useEffect(() => {
+//     if (showProfile) return;
+
+//     const fetchRestaurants = async () => {
+//       setLoading(true);
+//       setError("");
+
+//       try {
+//         const cuisineQuery = cuisine !== "All" ? `&cuisine=${cuisine}` : "";
+//         const zipcodeQuery = zipcode ? `&zipcode=${zipcode}` : "";
+//         const sortQuery = sort ? `&sort=${sort}` : "";
+
+//         const response = await fetch(
+//           `http://localhost:3000/api/restaurants?page=${page}&limit=12${cuisineQuery}${zipcodeQuery}${sortQuery}`
+//         );
+
+//         if (!response.ok) throw new Error("Failed to fetch restaurants");
+
+//         const data = await response.json();
+//         setRestaurants(data.restaurants);
+//       } catch (err) {
+//         setError(err.message || "Failed to load restaurants");
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchRestaurants();
+//   }, [cuisine, zipcode, sort, page, showProfile]);
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/RestaurantDisplayForm.css";
@@ -76,26 +150,47 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
   }, [cuisine, zipcode, sort, page, showProfile]);
 
   // To fetch unique cuisine types for filtering options
+  // useEffect(() => {
+  //   const fetchCuisineTypes = async () => {
+  //     try {
+  //       // const response = await fetch("http://localhost:3000/api/restaurants");
+  //      const response = await fetch("http://localhost:3000/api/restaurants/cuisines"); 
+  //       if (!response.ok) throw new Error("Failed to fetch cuisine types");
+
+  //       const data = await response.json();
+  //       const uniqueCuisines = [
+  //         ...new Set(data.restaurants.map((r) => r.cuisine)),
+  //       ];
+
+  //       setCuisineTypes(uniqueCuisines);
+  //     } catch (error) {
+  //       console.error("Error fetching cuisines:", error);
+  //     }
+  //   };
+
+  //   fetchCuisineTypes();
+  // }, []);
+
+    // Fetch available cuisine types and zip codes
   useEffect(() => {
-    const fetchCuisineTypes = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/restaurants");
-        if (!response.ok) throw new Error("Failed to fetch cuisine types");
+        const cuisinesResponse = await fetch("http://localhost:3000/api/restaurants/cuisines");
+        if (!cuisinesResponse.ok) throw new Error("Failed to fetch cuisine types");
+        const cuisinesData = await cuisinesResponse.json();
+        setCuisineTypes(["All", ...cuisinesData.cuisines]);
 
-        const data = await response.json();
-        const uniqueCuisines = [
-          ...new Set(data.restaurants.map((r) => r.cuisine)),
-        ];
-
-        setCuisineTypes(uniqueCuisines);
+        const zipCodesResponse = await fetch("http://localhost:3000/api/restaurants/zipcodes");
+        if (!zipCodesResponse.ok) throw new Error("Failed to fetch zip codes");
+        const zipCodesData = await zipCodesResponse.json();
+        setZipCodes(["All", ...zipCodesData.zipcodes]);
       } catch (error) {
-        console.error("Error fetching cuisines:", error);
+        console.error("Error fetching filter data:", error);
       }
     };
 
-    fetchCuisineTypes();
+    fetchData();
   }, []);
-
   // To fetch user profile information
   const fetchUserProfile = async () => {
     try {
@@ -288,8 +383,8 @@ const RestaurantDisplayForm = ({ setCurrentForm }) => {
       {/* Footer section */}
       <footer className="footer">
         <div className="footer-content">
-          <h2>Swiggy</h2>
-          <p>© 2024 Swiggy Limited</p>
+          <h2>Food on The Fly</h2>
+          <p>© 2024 @foodonthefly Limited</p>
         </div>
       </footer>
     </div>

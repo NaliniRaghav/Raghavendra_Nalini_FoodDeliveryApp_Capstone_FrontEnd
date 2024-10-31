@@ -1,28 +1,33 @@
 Food on the Fly - Online Food Delivery Application
 
-Overview Food on the Fly is a full-stack online food delivery application, built with the MERN stack (MongoDB, Express, React, Node.js). The application provides users with a seamless experience for browsing restaurants, viewing menu items, adding items to a cart, and placing orders. The backend manages user authentication, restaurant and menu data, and order processing with secure, scalable APIs.
+ 
+
+Overview 
+Food on the Fly is a full-stack online food delivery application, built with the MERN stack (MongoDB, Express, React, Node.js). The application provides users with a seamless experience for browsing restaurants, viewing menu items, adding items to a cart, and placing orders. The backend manages user authentication, restaurant and menu data, and order processing with secure, scalable APIs.
 
 Table of Contents 
-1. Features
- 2. Packages Used 
-3. Application Structure 
-4. API Endpoints
- 5. Setup and Installation 
-6. Future Enhancements
+    1. Features
+    2. Packages Used 
+    3. Application Structure 
+    4. API Endpoints
+    5. Setup and Installation 
+    6. Future Enhancements
 
-Features User Management 
+Features
 
-Signup/Login/Logout: Users can register, log in, and securely log out. 
+     User Management 
 
-Password Reset:         Provides password reset functionality via email verification. 
+    Signup/Login/Logout: Users can register, log in, and securely log out. 
 
-Profile Management: Allows users to manage their profiles, including address and contact details.
+    Password Reset: Provides password reset functionality via email verification. 
 
- Restaurant and Menu Management Restaurant Display: Users can browse restaurants, filter by cuisine and location, and sort by ratings and price.
+    Profile Management: Allows users to manage their profiles, including address and contact details.
 
- Menu Display: Each restaurant displays its menu items, descriptions, and pricing.
+    Restaurant and Menu Management Restaurant Display: Users can browse restaurants, filter by cuisine and location, and sort by ratings and price.
 
- Order and Cart Management Cart: Users can add items to a cart, adjust quantities, and view the total amount before placing an order. 
+    Menu Display: Each restaurant displays its menu items, descriptions, and pricing.
+
+    Order and Cart Management Cart: Users can add items to a cart, adjust quantities, and view the total amount before placing an order. 
 
 Order Processing: Orders are processed through a secure checkout form, calculating total costs and handling order placement.
 
@@ -43,20 +48,24 @@ Frontend (React)
 
 Application Structure 
 
-The FoodOnTheFly project is organized into two main directories: backend and frontend. Backend The backend directory houses the server-side logic and data handling. Inside the index.js is responsible for setting up the database connection configuration for MongoDB. The FoodOntheFly_Db is the name of the database.
+The FoodOnTheFly project is organized into two main directories: backend and frontend. Backend 
+The backend directory houses the server-side logic and data handling. Inside the index.js is responsible for setting up the database connection configuration for MongoDB. The FoodOntheFly_Db is the name of the database.
 The .env file stores environment variables, such as database URIs and secret keys. Finally, index.js is the main server file that initializes and runs the backend server.
 
  The installation and route details used in the project are available in the README.md file under the folder  Nalini_Raghavendra_Capstone_BackEnd. 
-Frontend The frontend directory contains the client-side interface built with React. 
+Frontend 
+The frontend directory contains the client-side interface built with React. 
 The public folder includes static assets accessible to the client.
  Inside src, the components folder holds reusable UI components.
 
-The pages folder stores the main pages of the application: 
+The pages folder stores the main pages of the application. 
 LoginPage.jsx presents the login interface. 
-SignupPage.jsx allows new users to register.
- ResetPasswordPage.jsx enables password reset functionality. 
-RestaurantDisplay.jsx shows a list of available restaurants. 
+SignupForm.jsx allows new users to register.
+ PasswordResetPage.jsx enables password reset functionality. 
+RestaurantDisplayForm.jsx shows a list of available restaurants. 
 MenuItemDisplay.jsx displays the menu items for a selected restaurant. 
+UserProfile.jsx displays the user details. User can update his informations like
+address, phone number using this form.
 App.jsx serves as the main React application, routing and orchestrating the components. 
 main.jsx is the entry point that renders the React application in the browser. 
 The project’s documentation, guidelines, and setup instructions are outlined in the README.md file at the root level, providing a comprehensive overview of the application and its components.
@@ -65,15 +74,22 @@ User Authentication
 POST /api/users/signup: Register a new user.
  POST /api/users/login: Login for existing users. 
 POST /api/users/reset-password: Request a password reset. 
+
 Restaurants
  GET /api/restaurants: Get a list of restaurants with optional filters (cuisine, location, rating).
  GET /api/restaurants/: Get details of a specific restaurant by ID.
  Menu Items 
 GET /api/menuItems/restaurants/
 Get a list of menu items for a specific restaurant. 
-Cart and Orders 
-POST /api/orders: Place an order with items from the cart. 
-GET /api/orders/user/: Get the order history for a specific user.
+Cart and Order
+Order items 
+API
+GET /api/orders: Retrieve all orders with details populated for users, restaurants, and items.
+GET /api/orders/:id: Retrieve a specific order by ID.
+POST /api/orders: Create a new order.
+PUT /api/orders/:id: Update an order by ID.
+DELETE /api/orders/:id: Delete an order by ID.
+
 
 Setup and Installation
 
