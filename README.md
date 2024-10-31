@@ -1,7 +1,5 @@
 Food on the Fly - Online Food Delivery Application
 
- 
-
 Overview 
 Food on the Fly is a full-stack online food delivery application, built with the MERN stack (MongoDB, Express, React, Node.js). The application provides users with a seamless experience for browsing restaurants, viewing menu items, adding items to a cart, and placing orders. The backend manages user authentication, restaurant and menu data, and order processing with secure, scalable APIs.
 
@@ -69,27 +67,46 @@ address, phone number using this form.
 App.jsx serves as the main React application, routing and orchestrating the components. 
 main.jsx is the entry point that renders the React application in the browser. 
 The project’s documentation, guidelines, and setup instructions are outlined in the README.md file at the root level, providing a comprehensive overview of the application and its components.
-API Endpoints 
-User Authentication 
-POST /api/users/signup: Register a new user.
- POST /api/users/login: Login for existing users. 
-POST /api/users/reset-password: Request a password reset. 
 
-Restaurants
- GET /api/restaurants: Get a list of restaurants with optional filters (cuisine, location, rating).
- GET /api/restaurants/: Get details of a specific restaurant by ID.
- Menu Items 
-GET /api/menuItems/restaurants/
-Get a list of menu items for a specific restaurant. 
-Cart and Order
-Order items 
-API
-GET /api/orders: Retrieve all orders with details populated for users, restaurants, and items.
-GET /api/orders/:id: Retrieve a specific order by ID.
-POST /api/orders: Create a new order.
-PUT /api/orders/:id: Update an order by ID.
-DELETE /api/orders/:id: Delete an order by ID.
+API Endpoints
 
+The available API routes are:
+Users API  
+POST /api/users/signup - To create a new user account.  
+POST /api/users/login - To log in an existing user.  
+GET /api/users/me - To get the current user profile.  
+PUT /api/users/me - To update the current user profile.  
+GET /api/users - To get all users.  
+GET /api/users/{user_id} - To get a single user by ID.  
+DELETE /api/users/{user_id} - To delete a user by ID.  
+POST /api/users/reset-password - To reset the user's password.  
+
+Restaurants API  
+GET /api/restaurants/cuisines - To get all unique cuisine types.  
+GET /api/restaurants/zipcodes - To get unique zip codes from restaurants.  
+POST /api/restaurants - To create a new restaurant.  
+GET /api/restaurants - To get a list of all restaurants.  
+GET /api/restaurants/{id} - To get a single restaurant by ID.  
+PATCH /api/restaurants/{id}/image - To update a restaurant's image.  
+POST /api/restaurants/{id}/menuItems - To add a menu item to a restaurant.  
+DELETE /api/restaurants/{id} - To delete a restaurant by ID.  
+GET /api/menuItems/restaurants/{restaurantId}/menu - To get menu items for a specific restaurant.  
+
+Menu Items API  
+POST /api/menuItems - To create a new menu item.  
+GET /api/menuItems - To get all menu items.  
+GET /api/menuItems/restaurants/:restaurantId/menu - To get menu items by restaurant ID.  
+GET /api/menuItems/:id - To get a single menu item by ID.  
+PUT /api/menuItems/:id - To update a menu item by ID.  
+DELETE /api/menuItems/:id - To delete a menu item by ID.  
+PATCH /api/menuItems/:id/image - To update a menu item's image.  
+
+Orders API  
+GET /api/orders - To get all order details.  
+GET /api/orders/:id - To get details of a specific order by ID.  
+POST /api/orders - To create a new order.  
+PUT /api/orders/:id - To update an existing order by ID.  
+DELETE /api/orders/:id - To delete an order by ID.  
 
 Setup and Installation
 
@@ -122,9 +139,9 @@ Frontend Setup:
   1. Real-Time Order Tracking: Implement real-time order tracking to keep users informed about the delivery status.
   2. Enhanced User Profiles: Expand profile management to include order history, favorite restaurants, and personalized recommendations.
   3. Restaurant Reviews: Enable users to leave reviews and rate restaurants, adding a layer of interactivity and feedback. 
- 4. Loyalty Program: Integrate a loyalty program to reward frequent users with discounts, incentives, or rewards points.
-  5. Admin Panel: Add an admin dashboard for restaurant management, menu updates, and order tracking. 
- 6. Mobile App: Develop a mobile version of the application using React Native for cross-platform support.
+ 1. Loyalty Program: Integrate a loyalty program to reward frequent users with discounts, incentives, or rewards points.
+  2. Admin Panel: Add an admin dashboard for restaurant management, menu updates, and order tracking. 
+ 2. Mobile App: Develop a mobile version of the application using React Native for cross-platform support.
  
    Conclusion
    Food on the Fly is a comprehensive online food delivery application designed with a focus on user experience, scalability, and real-world functionality. This project showcases skills in full-stack development, API creation, user authentication, and state management. It serves as a foundation for further feature enhancements and scaling.

@@ -22,7 +22,7 @@ const MenuItemDisplay = () => {
   // To set cart items state
   const [cart, setCart] = useState({});
 
-  // To set order details for checkout
+  // To set order details for checkout - 
   const [orderDetails, setOrderDetails] = useState({
     deliveryOption: "pickup",
     deliveryTime: "ASAP",

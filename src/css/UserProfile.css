@@ -51,3 +51,60 @@
   font-weight: bold;                 
   letter-spacing: 1px;              
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.delivery-info {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.delivery-info span {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-btn,
+.logout-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover,
+.logout-btn:hover {
+  background-color: #0056b3;
+}
+.label-box {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f0ad4e; /* Light orange for a label look */
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
