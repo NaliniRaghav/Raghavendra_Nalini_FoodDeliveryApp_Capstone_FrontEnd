@@ -1,9 +1,7 @@
-
 // To import necessary hooks for component functionality
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/UserProfile.css";
-
 
 // Component to display and edit user profile form
 const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
@@ -39,7 +37,9 @@ const UserProfile = ({ userProfile, onSaveProfile, onClose }) => {
   const handleExit = () => navigate("/login");
 
   return (
-    <div className="user-profile"> {/* Container for user profile form */}
+    <div className="user-profile">
+      {" "}
+      {/* Container for user profile form */}
       <h2>User Profile</h2>
       <form>
         <label>

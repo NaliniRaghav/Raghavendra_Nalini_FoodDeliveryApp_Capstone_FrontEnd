@@ -1,5 +1,5 @@
 // // To create a login form for users to access their accounts
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/LoginPage.css";
 
@@ -103,7 +103,7 @@ function LoginPage({ setCurrentForm }) {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)} 
+            onChange={(e) => setName(e.target.value)}
             style={{ display: "block", marginTop: "3px" }} // Input styling for spacing
           />
         </label>

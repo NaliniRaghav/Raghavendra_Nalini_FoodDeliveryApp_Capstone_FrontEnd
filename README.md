@@ -104,25 +104,33 @@ The connection to MongoDB details are available in the backend folder README.md.
 Start the backend server
 npm start
 Frontend Setup:
-* Navigate to the frontend folder
-* cd ../Raghavendra_Nalini_FoodDeliveryApp_Capstone_FrontEnd
-* Install dependencies
-* npx create vite@latest
-* npm install react-router-dom
-* npm install axios
-* Npm install cors
-* npm install dotenv
-* npm install react-icons
-* npm run dev
-* Access the Application:
-* Open your browser and go to http://localhost:5173 to view the application.
-* Future Enhancements 
-* 1. Real-Time Order Tracking: Implement real-time order tracking to keep users informed about the delivery status.
-*  2. Enhanced User Profiles: Expand profile management to include order history, favorite restaurants, and personalized recommendations.
-*  3. Restaurant Reviews: Enable users to leave reviews and rate restaurants, adding a layer of interactivity and feedback. 
-* 4. Loyalty Program: Integrate a loyalty program to reward frequent users with discounts, incentives, or rewards points.
-*  5. Admin Panel: Add an admin dashboard for restaurant management, menu updates, and order tracking. 
-* 6. Mobile App: Develop a mobile version of the application using React Native for cross-platform support.
-* 
-* Conclusion Food on the Fly is a comprehensive online food delivery application designed with a focus on user experience, scalability, and real-world functionality. This project showcases skills in full-stack development, API creation, user authentication, and state management. It serves as a foundation for further feature enhancements and scaling.
-* 
+ Navigate to the frontend folder
+ cd ../Raghavendra_Nalini_FoodDeliveryApp_Capstone_FrontEnd
+ Install dependencies
+ npx create vite@latest
+ npm install react-router-dom
+ npm install axios
+  Npm install cors
+ npm install dotenv
+ npm install react-icons
+ npm run dev
+ Access the Application:
+ Open your browser and go to http://localhost:5173 to view the application.
+
+  Future Enhancements 
+
+  1. Real-Time Order Tracking: Implement real-time order tracking to keep users informed about the delivery status.
+  2. Enhanced User Profiles: Expand profile management to include order history, favorite restaurants, and personalized recommendations.
+  3. Restaurant Reviews: Enable users to leave reviews and rate restaurants, adding a layer of interactivity and feedback. 
+ 4. Loyalty Program: Integrate a loyalty program to reward frequent users with discounts, incentives, or rewards points.
+  5. Admin Panel: Add an admin dashboard for restaurant management, menu updates, and order tracking. 
+ 6. Mobile App: Develop a mobile version of the application using React Native for cross-platform support.
+ 
+   Conclusion
+   Food on the Fly is a comprehensive online food delivery application designed with a focus on user experience, scalability, and real-world functionality. This project showcases skills in full-stack development, API creation, user authentication, and state management. It serves as a foundation for further feature enhancements and scaling.
+
+ ## Acknowledgments
+
+A special thank you to my instructors at Per Scholas (https://perscholas.org/):
+
+- Mr. Colton Wright and Mr. Abraham E. Tavarez – MERN class teachers, for their invaluable guidance and technical support.

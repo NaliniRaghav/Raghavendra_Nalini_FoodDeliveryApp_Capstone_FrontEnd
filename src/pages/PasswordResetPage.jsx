@@ -59,7 +59,9 @@ const ResetPasswordPage = () => {
   };
 
   return (
-    <div className="container"> {/* To display reset password form container */}
+    <div className="container">
+      {" "}
+      {/* To display reset password form container */}
       <h1>Reset Password</h1>
       <form onSubmit={handleSubmit}>
         <input

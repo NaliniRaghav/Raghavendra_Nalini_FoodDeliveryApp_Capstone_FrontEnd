@@ -1,5 +1,5 @@
 // // To import necessary modules and hooks
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Component to display the signup form
@@ -51,7 +51,9 @@ function SignupPage() {
   };
 
   return (
-    <div className="container"> {/* Container for signup form */}
+    <div className="container">
+      {" "}
+      {/* Container for signup form */}
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -75,7 +77,9 @@ function SignupPage() {
           name="password"
           placeholder="Password"
           value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
           required
         />
         <input

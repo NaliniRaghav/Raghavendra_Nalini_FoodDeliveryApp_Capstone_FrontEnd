@@ -7,22 +7,21 @@ import "../css/MenuItemDisplayForm.css";
 
 // To display restaurant menu and cart functionality
 const MenuItemDisplay = () => {
-  
   // To get restaurantId from URL parameters
   const { restaurantId } = useParams();
-  
+
   // To navigate between pages
   const navigate = useNavigate();
-  
+
   // To set restaurant details state
   const [restaurantDetails, setRestaurantDetails] = useState(null);
-  
+
   // To set menu items state
   const [menuItems, setMenuItems] = useState([]);
-  
+
   // To set cart items state
   const [cart, setCart] = useState({});
-  
+
   // To set order details for checkout
   const [orderDetails, setOrderDetails] = useState({
     deliveryOption: "pickup",
@@ -30,22 +29,22 @@ const MenuItemDisplay = () => {
     address: "sample",
     payment: { cardNumber: "", expiryDate: "", cvv: "" },
   });
-  
+
   // To toggle order confirmation view
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
-  
+
   // To set loading state during data fetching
   const [loading, setLoading] = useState(true);
-  
+
   // To set error messages
   const [error, setError] = useState("");
-  
+
   // To set the final amount for order
   const [finalAmount, setFinalAmount] = useState(0);
-  
+
   // To set random quote for display
   const [quote, setQuote] = useState({ text: "", author: "" });
-  
+
   // To toggle cart visibility
   const [isCartVisible, setIsCartVisible] = useState(false);
 
@@ -221,7 +220,7 @@ const MenuItemDisplay = () => {
 
   // To navigate back to restaurant listing
   const handleBackToRestaurants = () => {
-    navigate("/restaurantDisplay"); 
+    navigate("/restaurantDisplay");
   };
 
   // To navigate to login page on logout
