@@ -1,3 +1,5 @@
+CAPSTONE PROJECT - FRONTEND
+
 Food on the Fly - Online Food Delivery Application
 
 Overview 
@@ -151,3 +153,9 @@ Frontend Setup:
 A special thank you to my instructors at Per Scholas (https://perscholas.org/):
 
 - Mr. Colton Wright and Mr. Abraham E. Tavarez – MERN instructors, for their invaluable guidance and technical support.
+
+Resource:
+ 
+
+- (https://github.com/)
+- (https://www.youtube.com/)
