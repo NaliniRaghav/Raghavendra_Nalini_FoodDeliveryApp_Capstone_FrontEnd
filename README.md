@@ -150,4 +150,4 @@ Frontend Setup:
 
 A special thank you to my instructors at Per Scholas (https://perscholas.org/):
 
-- Mr. Colton Wright and Mr. Abraham E. Tavarez – MERN class teachers, for their invaluable guidance and technical support.
+- Mr. Colton Wright and Mr. Abraham E. Tavarez – MERN instructors, for their invaluable guidance and technical support.
