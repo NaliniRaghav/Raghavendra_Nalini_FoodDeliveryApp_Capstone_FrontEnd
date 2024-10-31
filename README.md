@@ -1,4 +1,4 @@
-CAPSTONE PROJECT - FRONTEND
+CAPSTONE PROJECT FRONTEND
 
 Food on the Fly - Online Food Delivery Application
 
