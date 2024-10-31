@@ -148,7 +148,7 @@ Frontend Setup:
    Conclusion
    Food on the Fly is a comprehensive online food delivery application designed with a focus on user experience, scalability, and real-world functionality. This project showcases skills in full-stack development, API creation, user authentication, and state management. It serves as a foundation for further feature enhancements and scaling.
 
- ## Acknowledgments
+  Acknowledgments:
 
 A special thank you to my instructors at Per Scholas (https://perscholas.org/):
 
